@@ -1,0 +1,30 @@
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+@media (-webkit-min-device-pixel-radio: 1.5),(min-device-pixel-radio: 1.5) {
+    .border-1px {
+        &:after {
+            -webkit-transform: scale(.7);
+            transform: scale(.7);
+        }
+    }
+}
+@media (-webkit-min-device-pixel-radio: 2),(min-device-pixel-radio: 2) {
+    .border-1px {
+        &:after {
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+        }
+    }
+}
+@media (-webkit-min-device-pixel-radio: 3),(min-device-pixel-radio: 3) {
+    .border-1px {
+        &:after {
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+        }
+    }
+}
