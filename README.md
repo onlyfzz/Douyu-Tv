@@ -1,4 +1,4 @@
-# douyutv
+# douyu
 
 > A Vue.js project
 

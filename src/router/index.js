@@ -1,12 +1,11 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import recommend from 'components/recommend/recommend';
+import Vue from 'vue';
+import Router from 'vue-router';
+import todo from 'components/todo';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-    'linkActiveClass': 'active',
     routes: [
-        { path: '/recommend', component: recommend }
+        {path: '/', component: todo}
     ]
-})
+});
