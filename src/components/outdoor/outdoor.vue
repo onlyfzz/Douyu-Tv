@@ -1,11 +1,11 @@
 <template>
-    <div class="recommend">
+    <div class="outdoor">
         <basecomp :rooms="list"></basecomp>
         <loading :is-loading="loading"></loading>
     </div>
 </template>
 
-<script type="text/javascript">
+<script>
     import basecomp from 'components/base/basecomp';
     import loading from 'components/loading/loading';
     import { load } from 'common/js/lazyload';
@@ -14,8 +14,10 @@
         data() {
             return {
                 list: [],
-                loading: true,
-                offset: 0
+                load: false,
+                offset: 0,
+                page: 1,
+                loading: true
             };
         },
         created() {
@@ -38,15 +40,15 @@
         },
         methods: {
             fetchData() {
-                return this.$http.get('/api/RoomApi/live').then((response) => {
+                return this.$http.get('/api/RoomApi/live/outdoor').then((response) => {
                     response = response.body;
                     if (response.error === 0) {
-                        this.list = response.data;                        
+                        this.list = response.data;
                     }
-                });
+               }); 
             },
             getMore(offset) {
-                return this.$http.get('/api/RoomApi/live/' + offset).then((response) => {
+                return this.$http.get('/api/RoomApi/live/outdoor' + offset).then((response) => {
                     response = response.body;
                     if (response.error === 0 && response.data) {
                         this.list = this.list.concat(response.data.slice(-2));
@@ -58,7 +60,7 @@
             basecomp,
             loading
         }
-    }
+    };
 </script>
 
 <style lang="scss">

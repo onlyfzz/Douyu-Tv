@@ -1,0 +1,81 @@
+<template>
+    <div v-if="isLoading" class="loading">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            isLoading: Boolean
+        }
+    };
+</script>
+
+<style lang="scss">
+    .loading {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 60px;
+        height: 60px;
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+    .circle1,
+    .circle2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #0062e0;
+        opacity: .7;
+    }
+    .circle1 {
+        -webkit-animation: action1 2s infinite ease-in-out;
+        animation: action1 2s infinite ease-in-out;
+    }
+    .circle2 {
+        -webkit-animation: action2 2s infinite ease-in-out;
+        animation: action2 2s infinite ease-in-out;
+    }
+    .loading p {
+        width: 100%;
+        margin-top: 60px;
+        text-align: center;
+    }
+    .loading .per{
+        position: absolute;
+        left: -20px;
+        top: 140%;
+        width: 0;
+        height: 5px;
+        background-color: #0062e0;
+        transition: all 1s;
+    }
+    @-webkit-keyframes action1{
+        0% { 
+            transform: scale(0)
+        }
+        50% { 
+            transform: scale(1)
+        }
+        100% {
+            transform: scale(0) 
+        }
+    }
+    @-webkit-keyframes action2{
+        0% { 
+            transform: scale(1)
+        }
+        50% { 
+            transform: scale(0)
+        }
+        100% {
+            transform: scale(1) 
+        }
+    }
+</style>

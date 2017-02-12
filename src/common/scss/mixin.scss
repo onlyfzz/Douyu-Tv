@@ -10,3 +10,6 @@
         border-top: 1px solid $color;
     }
 }
+@function rem($px){
+    @return ($px / 48) * 1rem;
+}

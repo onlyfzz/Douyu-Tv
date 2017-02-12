@@ -50,6 +50,8 @@
 <style lang="scss">
     .swiper-container {
         width: 100%;
+        height: 140px;
+        border-bottom: 5px solid #eee;
         .swiper-slide > img {
             width: 100%;
             height: 100%;
